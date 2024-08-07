@@ -9,6 +9,6 @@ spring:
     consumer:
       auto-offset-reset: earliest
       group-id: embedded-test-group
-      user-holder-interceptor-enabled: true
+#      user-holder-interceptor-enabled: true
 test:
   topic: embedded-test-topic

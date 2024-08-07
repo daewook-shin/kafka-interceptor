@@ -15,7 +15,7 @@ class KafkaConsumer {
 
     private var user: User? = null
 
-    @KafkaListener(topics = ["\${test.topic}"])
+    @KafkaListener(topics = ["\${test.topic}"], containerFactory = "customKafkaListenerContainerFactory")
     fun receive(consumerRecord: ConsumerRecord<*, *>) {
         LOGGER.info("received payload='{}'", consumerRecord.toString())
         LOGGER.info("User='{}'", UserHolder.get())
